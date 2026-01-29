@@ -44,13 +44,15 @@
           pkgs.pkg-config
         ];
 
-        buildInputs = [
-          pkgs.glib
+        buildInputs = with pkgs; [
+          glib
+          gtk4
         ];
 
         shellHook = ''
           clear
           export RUST_BACKTRACE=1
+          export PKG_CONFIG_ALLOW_SYSTEM_CFLAGS=1
           if [ -n "$(git status --porcelain)" ]; then
                       echo -e "\e[1;33m⚠️  Warning: Git tree is dirty. Remember to 'git add' new files!\e[0m"
                     fi

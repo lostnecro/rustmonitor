@@ -9,14 +9,16 @@ rustPlatform.buildRustPackage {
   version = "0.1.0";
   src = ./.;
 
-  cargoHash = "sha256-HvDQ7XSbZ14JNoL1bGDNp5yyAw0/B/Rf91aCOhNVQ4s=";
+  cargoHash = "sha256-7ZaTz8iyoEkfsX13kPCY35QviHD1hD3o8fp+6kFncCE=";
 
   buildInputs = with pkgs; [
     glib
+    gtk4
   ];
 
   nativeBuildInputs = with pkgs; [
     glib
+    pkg-config
   ];
 
   meta = with lib; {
